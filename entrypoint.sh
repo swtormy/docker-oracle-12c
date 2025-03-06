@@ -80,7 +80,7 @@ case "$1" in
 			echo "Starting tnslsnr"
 			su oracle -c "/u01/app/oracle/product/12.2.0/SE/bin/tnslsnr &"
 			#create DB for SID: $ORACLE_SID
-			su oracle -c "$ORACLE_HOME/bin/dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbname $ORACLE_SID -sid $ORACLE_SID -responseFile NO_VALUE $CHARSET_INIT -totalMemory $DBCA_TOTAL_MEMORY -emConfiguration LOCAL -pdbAdminPassword oracle -sysPassword oracle -systemPassword oracle"
+			su oracle -c "$ORACLE_HOME/bin/dbca -silent -createDatabase -templateName General_Purpose.dbc -gdbname $ORACLE_SID -sid $ORACLE_SID -responseFile NO_VALUE $CHARSET_INIT -totalMemory $DBCA_TOTAL_MEMORY -emConfiguration LOCAL -pdbAdminPassword $ORACLE_PDB_ADMIN_PASSWORD -sysPassword $ORACLE_SYS_PASSWORD -systemPassword $ORACLE_SYSTEM_PASSWORD"
 			
 			echo "Configuring Apex console"
 			cd $ORACLE_HOME/apex

@@ -8,6 +8,9 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/u01/app/o
 ENV USE_UTF8_IF_CHARSET_EMPTY true
 ENV ORACLE_HOME /u01/app/oracle/product/12.2.0/SE
 ENV ORACLE_SID xe
+ENV ORACLE_SYS_PASSWORD=oracle
+ENV ORACLE_SYSTEM_PASSWORD=oracle
+ENV ORACLE_PDB_ADMIN_PASSWORD=oracle
 
 ADD entrypoint.sh /entrypoint.sh
 
